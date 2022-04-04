@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Expense Tracker</h1>
+        <form action="">
+            <div>
+                <label for="month">Select Month</label>
+                <input id="month" type="month">
+            </div>
+            <div>
+                <label for="income">Income</label>
+                <input id="income" type="number">
+            </div>
+            <div>
+                <label for="expense">Expense</label>
+                <input id="expense" type="number">
+            </div>
+        </form>
+        <input onclick="expenses()" type="submit">
+    </div>
+
+    <script>
+
+        function expenses(){
+            
+            let list = document.createElement("div");
+            
+            let month = document.createElement("p");
+            month.innerText = document.getElementById("month").value;
+            // console.log(month);
+            let incomeText = document.createElement("p");
+            incomeText.append(document.createTextNode("Your income Rs."))
+            let income = document.createElement("p");
+            income.innerText =  document.getElementById("income").value;
+            incomeText.append(income);
+            
+            let expenseText = document.createElement("p");
+            expenseText.append(document.createTextNode("Your income Rs."))
+            let expense = document.createElement("p");
+            expense.innerText = document.getElementById("expense").value;
+            expenseText.append(expense);
+                
+            let savingText = document.createElement("p");
+            savingText.append(document.createTextNode("Your income Rs."))
+            let saving = document.createElement("p");
+            saving.innerText =  document.getElementById("income").value - document.getElementById("expense").value;
+            savingText.append(saving);
+            // console.log(saving);
+            if(month.innerText!=""){
+                list.append(month, incomeText, expenseText, savingText);
+            // let container = document.getElementById("container") = 
+            container.append(list);
+            }
+            console.log(incomeText);
+            
+            // console.log(list)
+            // console.log(container);
+            // console.log(list);
+
+
+        }
+    </script>
+</body>
+
+</html>
